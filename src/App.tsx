@@ -7,8 +7,8 @@ import Sidebar from './components/Sidebar';
 import Community from './components/Community';
 import MyDreams from './components/MyDreams';
 import Profile from './components/Profile'; 
-import Footer from './components/Footer'; // Import Footer component
 import './App.css';
+import Footer from './components/Footer';
 
 initializeIcons();
 loadTheme(lightTheme);

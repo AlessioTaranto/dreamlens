@@ -16,7 +16,7 @@ const DreamCard: React.FC<DreamCardProps> = ({ dream }) => {
   return (
     <Stack className="dream-card">
       <Image src={dream.imageUrl} alt={dream.title} className="dream-image" />
-      <Stack tokens={{ childrenGap: 10 }} padding="10px">
+      <Stack tokens={{ childrenGap: 10 }} padding="10px" className="dream-content">
         <Text variant="xLarge">{dream.title}</Text>
         <Text>{`${dream.dream.substring(0, 100)}...`}</Text>
         <Stack horizontal verticalAlign="center" tokens={{ childrenGap: 5 }}>

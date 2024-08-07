@@ -6,7 +6,8 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Community from './components/Community';
 import MyDreams from './components/MyDreams';
-import Profile from './components/Profile';  // Import the Profile component
+import Profile from './components/Profile'; 
+import Footer from './components/Footer'; // Import Footer component
 import './App.css';
 
 initializeIcons();
@@ -46,11 +47,12 @@ const App: React.FC = () => {
             <Routes>
               <Route path="/community" element={<Community />} />
               <Route path="/my-dreams" element={<MyDreams />} />
-              <Route path="/profile" element={<Profile />} /> {/* Add the Profile route */}
+              <Route path="/profile" element={<Profile />} />
               <Route path="/" element={<Community />} />
             </Routes>
           </main>
         </div>
+        <Footer />
       </div>
     </Router>
   );

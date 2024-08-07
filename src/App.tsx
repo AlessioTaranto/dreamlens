@@ -50,9 +50,11 @@ const App: React.FC = () => {
               <Route path="/profile" element={<Profile />} />
               <Route path="/" element={<Community />} />
             </Routes>
+
+            <Footer />
+
           </main>
         </div>
-        <Footer />
       </div>
     </Router>
   );

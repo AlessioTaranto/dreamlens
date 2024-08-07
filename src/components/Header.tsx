@@ -1,5 +1,6 @@
 import React from 'react';
 import { Stack, Text, Persona, DefaultButton, IconButton } from '@fluentui/react';
+import { useNavigate } from 'react-router-dom';
 import './Header.css';
 
 interface HeaderProps {
@@ -8,6 +9,12 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ isMobile, toggleCollapse }) => {
+  const navigate = useNavigate();
+
+  const handleProfileClick = () => {
+    navigate('/profile');
+  };
+
   return (
     <Stack horizontal horizontalAlign="space-between" verticalAlign="center" className="header">
       <Stack horizontal verticalAlign="center" tokens={{ childrenGap: 10 }}>
@@ -26,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({ isMobile, toggleCollapse }) => {
           secondaryText="user@example.com"
           imageUrl="https://via.placeholder.com/40"
         />
-        <DefaultButton text="Profile" href="#/profile" />
+        <DefaultButton text="Profile" onClick={handleProfileClick} />
         <DefaultButton text="Sign Out" onClick={() => console.log('Sign Out')} />
       </Stack>
     </Stack>

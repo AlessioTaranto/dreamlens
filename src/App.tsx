@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Community from './components/Community';
 import MyDreams from './components/MyDreams';
+import Profile from './components/Profile';  // Import the Profile component
 import './App.css';
 
 initializeIcons();
@@ -45,6 +46,7 @@ const App: React.FC = () => {
             <Routes>
               <Route path="/community" element={<Community />} />
               <Route path="/my-dreams" element={<MyDreams />} />
+              <Route path="/profile" element={<Profile />} /> {/* Add the Profile route */}
               <Route path="/" element={<Community />} />
             </Routes>
           </main>

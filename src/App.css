@@ -1,19 +1,9 @@
-:root {
-  --background-color: #f3f2f1;
-  --text-color: #333333;
-}
-
-[data-theme='dark'] {
-  --background-color: #333333;
-  --text-color: #f3f3f3;
-}
-
 .App {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: var(--white);
+  color: var(--neutralPrimary);
 }
 
 .App-content {
@@ -24,9 +14,4 @@
 .App-main {
   flex: 1;
   padding: 20px;
-}
-
-.App .ms-Nav {
-  width: 200px;
-  border-right: 1px solid #ddd;
 }

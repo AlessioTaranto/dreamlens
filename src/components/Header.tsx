@@ -1,16 +1,19 @@
 import React from 'react';
-import { Stack, PrimaryButton, Text } from '@fluentui/react';
-import { useTheme } from '../hooks/useTheme';
+import { Stack, Text, Persona, PersonaSize, DefaultButton } from '@fluentui/react';
 
 const Header: React.FC = () => {
-  const { theme, toggleTheme } = useTheme();
-
   return (
-    <Stack horizontal tokens={{ childrenGap: 10 }} horizontalAlign="space-between" styles={{ root: { padding: 10, borderBottom: '1px solid #ddd' } }}>
+    <Stack horizontal horizontalAlign="space-between" verticalAlign="center" styles={{ root: { padding: '10px 20px', borderBottom: '1px solid #ddd' } }}>
       <Text variant="xLarge">DreamLens</Text>
-      <PrimaryButton onClick={toggleTheme}>
-        {theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode'}
-      </PrimaryButton>
+      <Stack horizontal verticalAlign="center" tokens={{ childrenGap: 10 }}>
+        <Persona
+          size={PersonaSize.size40}
+          text="User Name"
+          secondaryText="user@example.com"
+          imageUrl="https://via.placeholder.com/40"
+        />
+        <DefaultButton text="Sign Out" onClick={() => console.log('Sign Out')} />
+      </Stack>
     </Stack>
   );
 };

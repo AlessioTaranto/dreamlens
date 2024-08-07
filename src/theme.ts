@@ -26,30 +26,3 @@ export const lightTheme: ITheme = createTheme({
     white: '#ffffff',
   },
 });
-
-export const darkTheme: ITheme = createTheme({
-  palette: {
-    themePrimary: '#2899f5',
-    themeLighterAlt: '#00060a',
-    themeLighter: '#001828',
-    themeLight: '#002d4a',
-    themeTertiary: '#005a94',
-    themeSecondary: '#0083d8',
-    themeDarkAlt: '#40a6f6',
-    themeDark: '#62b6f7',
-    themeDarker: '#8cccfa',
-    neutralLighterAlt: '#3c3c3c',
-    neutralLighter: '#454545',
-    neutralLight: '#515151',
-    neutralQuaternaryAlt: '#595959',
-    neutralQuaternary: '#5f5f5f',
-    neutralTertiaryAlt: '#7c7c7c',
-    neutralTertiary: '#a0a0a0',
-    neutralSecondary: '#d0d0d0',
-    neutralPrimaryAlt: '#eaeaea',
-    neutralPrimary: '#f3f3f3',
-    neutralDark: '#f8f8f8',
-    black: '#fbfbfb',
-    white: '#333333',
-  },
-});

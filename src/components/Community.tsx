@@ -1,30 +1,63 @@
 import React from 'react';
-import { Stack, SearchBox, List, Text } from '@fluentui/react';
+import { Stack, SearchBox, Text, Pivot, PivotItem, List } from '@fluentui/react';
 
 const Community: React.FC = () => {
-  const items = [
-    { key: '1', name: 'Dream 1', description: 'A detailed dream analysis...' },
-    { key: '2', name: 'Dream 2', description: 'Another detailed dream analysis...' },
-    // Add more items
+  const dreams = [
+    { key: '1', title: 'Dream 1', dream: 'Dream content...', analysis: 'Analysis of the dream...' },
+    { key: '2', title: 'Dream 2', dream: 'Dream content...', analysis: 'Analysis of the dream...' },
+    // Add more dreams
   ];
 
   return (
     <Stack tokens={{ childrenGap: 15 }}>
       <SearchBox placeholder="Search dreams..." />
-      <Text variant="large">Newest Shared Dreams</Text>
-      <List
-        items={items}
-        onRenderCell={(item, index) => {
-          if (!item) return null; // Check if item is undefined
-          return (
-            <Stack key={item.key} tokens={{ childrenGap: 5 }}>
-              <Text variant="mediumPlus">{item.name}</Text>
-              <Text>{item.description}</Text>
-            </Stack>
-          );
-        }}
-      />
-      {/* Add sections for suggested and popular dreams */}
+      <Pivot>
+        <PivotItem headerText="Newest">
+          <List
+            items={dreams}
+            onRenderCell={(dream) => {
+              if (!dream) return null;
+              return (
+                <Stack key={dream.key} tokens={{ childrenGap: 5 }}>
+                  <Text variant="mediumPlus">{dream.title}</Text>
+                  <Text>{dream.dream}</Text>
+                  <Text>{dream.analysis}</Text>
+                </Stack>
+              );
+            }}
+          />
+        </PivotItem>
+        <PivotItem headerText="Popular">
+          <List
+            items={dreams}
+            onRenderCell={(dream) => {
+              if (!dream) return null;
+              return (
+                <Stack key={dream.key} tokens={{ childrenGap: 5 }}>
+                  <Text variant="mediumPlus">{dream.title}</Text>
+                  <Text>{dream.dream}</Text>
+                  <Text>{dream.analysis}</Text>
+                </Stack>
+              );
+            }}
+          />
+        </PivotItem>
+        <PivotItem headerText="Suggested">
+          <List
+            items={dreams}
+            onRenderCell={(dream) => {
+              if (!dream) return null;
+              return (
+                <Stack key={dream.key} tokens={{ childrenGap: 5 }}>
+                  <Text variant="mediumPlus">{dream.title}</Text>
+                  <Text>{dream.dream}</Text>
+                  <Text>{dream.analysis}</Text>
+                </Stack>
+              );
+            }}
+          />
+        </PivotItem>
+      </Pivot>
     </Stack>
   );
 };

@@ -1,12 +1,13 @@
 import React from 'react';
 import { Text, Stack } from '@fluentui/react';
 import Carousel from 'react-multi-carousel';
+import DreamCard from './DreamCard';
 import 'react-multi-carousel/lib/styles.css';
 import './DreamCarousel.css';
 
 interface DreamCarouselProps {
   title: string;
-  dreams: { key: string; title: string; dream: string; analysis: string }[];
+  dreams: { key: string; title: string; dream: string; analysis: string; imageUrl: string; comments: string[]; upvotes: number; }[];
 }
 
 const DreamCarousel: React.FC<DreamCarouselProps> = ({ title, dreams }) => {
@@ -42,11 +43,7 @@ const DreamCarousel: React.FC<DreamCarouselProps> = ({ title, dreams }) => {
         itemClass="carousel-item-padding-40-px"
       >
         {dreams.map(dream => (
-          <div key={dream.key} className="carousel-item">
-            <Text variant="xLarge">{dream.title}</Text>
-            <Text>{dream.dream}</Text>
-            <Text>{dream.analysis}</Text>
-          </div>
+          <DreamCard key={dream.key} dream={dream} />
         ))}
       </Carousel>
     </Stack>

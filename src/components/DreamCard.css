@@ -1,0 +1,19 @@
+.dream-card {
+    padding: 20px;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  
+  .dream-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .comment {
+    padding-left: 10px;
+    border-left: 2px solid var(--neutralPrimary);
+  }
+  

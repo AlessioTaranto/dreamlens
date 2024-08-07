@@ -6,8 +6,8 @@ import './MyDreams.css';
 
 const MyDreams: React.FC = () => {
   const [dreams, setDreams] = React.useState([
-    { key: '1', title: 'Dream 1', dream: 'Dream content...', analysis: 'Analysis of the dream...' },
-    { key: '2', title: 'Dream 2', dream: 'Dream content...', analysis: 'Analysis of the dream...' },
+    { key: '1', title: 'Dream 1', dream: 'Dream content...', analysis: 'Analysis of the dream...', imageUrl: 'https://via.placeholder.com/150', comments: [], upvotes: 10 },
+    { key: '2', title: 'Dream 2', dream: 'Dream content...', analysis: 'Analysis of the dream...', imageUrl: 'https://via.placeholder.com/150', comments: [], upvotes: 5 },
   ]);
 
   const [newDream, setNewDream] = React.useState('');
@@ -15,7 +15,7 @@ const MyDreams: React.FC = () => {
 
   const handleAddDream = () => {
     if (newDream.trim() !== '') {
-      setDreams([...dreams, { key: (dreams.length + 1).toString(), title: `Dream ${dreams.length + 1}`, dream: newDream, analysis: 'Analysis...' }]);
+      setDreams([...dreams, { key: (dreams.length + 1).toString(), title: `Dream ${dreams.length + 1}`, dream: newDream, analysis: 'Analysis...', imageUrl: 'https://via.placeholder.com/150', comments: [], upvotes: 0 }]);
       setNewDream('');
       setMessage('Dream added successfully.');
     } else {
@@ -24,7 +24,7 @@ const MyDreams: React.FC = () => {
   };
 
   return (
-    <Stack tokens={{ childrenGap: 15 }}>
+    <Stack tokens={{ childrenGap: 15 }} className="my-dreams-container">
       <DreamCarousel title="My Dreams" dreams={dreams} />
       <TextField
         label="Describe your dream"

@@ -1,6 +1,8 @@
 import React from 'react';
-import { Stack, PrimaryButton, Text, TextField, List } from '@fluentui/react';
+import { Stack, PrimaryButton, Text, TextField } from '@fluentui/react';
+import DreamCarousel from './DreamCarousel';
 import AudioRecorder from './AudioRecorder';
+import './MyDreams.css';
 
 const MyDreams: React.FC = () => {
   const [dreams, setDreams] = React.useState([
@@ -23,20 +25,7 @@ const MyDreams: React.FC = () => {
 
   return (
     <Stack tokens={{ childrenGap: 15 }}>
-      <Text variant="large">My Dreams</Text>
-      <List
-        items={dreams}
-        onRenderCell={(dream) => {
-          if (!dream) return null;
-          return (
-            <Stack key={dream.key} tokens={{ childrenGap: 5 }}>
-              <Text variant="mediumPlus">{dream.title}</Text>
-              <Text>{dream.dream}</Text>
-              <Text>{dream.analysis}</Text>
-            </Stack>
-          );
-        }}
-      />
+      <DreamCarousel title="My Dreams" dreams={dreams} />
       <TextField
         label="Describe your dream"
         multiline

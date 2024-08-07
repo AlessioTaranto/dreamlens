@@ -12,7 +12,7 @@ const Sidebar: React.FC = () => {
           ],
         },
       ]}
-      styles={{ root: { width: 200, height: '100vh', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', paddingTop: 20 } }}
+      styles={{ root: { width: '200px', '@media (max-width: 768px)': { width: '100%' }, height: '100vh', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', paddingTop: 20 } }}
     />
   );
 };

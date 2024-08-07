@@ -1,0 +1,12 @@
+.carousel-item {
+    padding: 20px;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 20px; /* Adjust margin to show part of the next item */
+  }
+  
+  .carousel-item-padding-40-px {
+    margin-right: 20px;
+  }
+  

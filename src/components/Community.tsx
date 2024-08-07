@@ -1,5 +1,7 @@
 import React from 'react';
-import { Stack, SearchBox, Text, Pivot, PivotItem, List } from '@fluentui/react';
+import { Stack, SearchBox } from '@fluentui/react';
+import DreamCarousel from './DreamCarousel';
+import './Community.css';
 
 const Community: React.FC = () => {
   const dreams = [
@@ -11,53 +13,9 @@ const Community: React.FC = () => {
   return (
     <Stack tokens={{ childrenGap: 15 }}>
       <SearchBox placeholder="Search dreams..." />
-      <Pivot>
-        <PivotItem headerText="Newest">
-          <List
-            items={dreams}
-            onRenderCell={(dream) => {
-              if (!dream) return null;
-              return (
-                <Stack key={dream.key} tokens={{ childrenGap: 5 }}>
-                  <Text variant="mediumPlus">{dream.title}</Text>
-                  <Text>{dream.dream}</Text>
-                  <Text>{dream.analysis}</Text>
-                </Stack>
-              );
-            }}
-          />
-        </PivotItem>
-        <PivotItem headerText="Popular">
-          <List
-            items={dreams}
-            onRenderCell={(dream) => {
-              if (!dream) return null;
-              return (
-                <Stack key={dream.key} tokens={{ childrenGap: 5 }}>
-                  <Text variant="mediumPlus">{dream.title}</Text>
-                  <Text>{dream.dream}</Text>
-                  <Text>{dream.analysis}</Text>
-                </Stack>
-              );
-            }}
-          />
-        </PivotItem>
-        <PivotItem headerText="Suggested">
-          <List
-            items={dreams}
-            onRenderCell={(dream) => {
-              if (!dream) return null;
-              return (
-                <Stack key={dream.key} tokens={{ childrenGap: 5 }}>
-                  <Text variant="mediumPlus">{dream.title}</Text>
-                  <Text>{dream.dream}</Text>
-                  <Text>{dream.analysis}</Text>
-                </Stack>
-              );
-            }}
-          />
-        </PivotItem>
-      </Pivot>
+      <DreamCarousel title="Newest Dreams" dreams={dreams} />
+      <DreamCarousel title="Popular Dreams" dreams={dreams} />
+      <DreamCarousel title="Suggested Dreams" dreams={dreams} />
     </Stack>
   );
 };

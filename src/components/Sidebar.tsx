@@ -1,21 +1,10 @@
-import React, { useState } from 'react';
-import { Nav, IconButton } from '@fluentui/react';
+import React from 'react';
+import { Nav } from '@fluentui/react';
 import './Sidebar.css';
 
 const Sidebar: React.FC = () => {
-  const [collapsed, setCollapsed] = useState(false);
-
-  const toggleCollapse = () => {
-    setCollapsed(!collapsed);
-  };
-
   return (
-    <div className={`sidebar ${collapsed ? 'collapsed' : ''}`}>
-      <IconButton
-        iconProps={{ iconName: collapsed ? 'GlobalNavButton' : 'Cancel' }}
-        className="collapse-button"
-        onClick={toggleCollapse}
-      />
+    <div className="sidebar">
       <Nav
         groups={[
           {

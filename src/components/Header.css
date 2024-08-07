@@ -3,3 +3,13 @@
     border-bottom: 1px solid #ddd;
   }
   
+  .collapse-button {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    .collapse-button {
+      display: block;
+    }
+  }
+  

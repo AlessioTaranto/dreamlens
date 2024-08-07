@@ -1,11 +1,25 @@
 import React from 'react';
-import { Stack, Text, Persona, DefaultButton } from '@fluentui/react';
+import { Stack, Text, Persona, DefaultButton, IconButton } from '@fluentui/react';
 import './Header.css';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  isMobile: boolean;
+  toggleCollapse: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ isMobile, toggleCollapse }) => {
   return (
     <Stack horizontal horizontalAlign="space-between" verticalAlign="center" className="header">
-      <Text variant="xLarge">DreamLens</Text>
+      <Stack horizontal verticalAlign="center" tokens={{ childrenGap: 10 }}>
+        {isMobile && (
+          <IconButton
+            iconProps={{ iconName: 'GlobalNavButton' }}
+            className="collapse-button"
+            onClick={toggleCollapse}
+          />
+        )}
+        <Text variant="xLarge">DreamLens</Text>
+      </Stack>
       <Stack horizontal verticalAlign="center" tokens={{ childrenGap: 10 }}>
         <Persona
           text="User Name"

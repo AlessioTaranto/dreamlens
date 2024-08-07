@@ -1,19 +1,32 @@
-import React from 'react';
-import { Nav } from '@fluentui/react';
+import React, { useState } from 'react';
+import { Nav, IconButton } from '@fluentui/react';
+import './Sidebar.css';
 
 const Sidebar: React.FC = () => {
+  const [collapsed, setCollapsed] = useState(false);
+
+  const toggleCollapse = () => {
+    setCollapsed(!collapsed);
+  };
+
   return (
-    <Nav
-      groups={[
-        {
-          links: [
-            { name: 'Community', url: '#/community', key: 'community', icon: 'News' },
-            { name: 'My Dreams', url: '#/my-dreams', key: 'my-dreams', icon: 'Dictionary' },
-          ],
-        },
-      ]}
-      styles={{ root: { width: '200px', '@media (max-width: 768px)': { width: '100%' }, height: '100vh', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', paddingTop: 20 } }}
-    />
+    <div className={`sidebar ${collapsed ? 'collapsed' : ''}`}>
+      <IconButton
+        iconProps={{ iconName: collapsed ? 'GlobalNavButton' : 'Cancel' }}
+        className="collapse-button"
+        onClick={toggleCollapse}
+      />
+      <Nav
+        groups={[
+          {
+            links: [
+              { name: 'Community', url: '#/community', key: 'community', icon: 'News' },
+              { name: 'My Dreams', url: '#/my-dreams', key: 'my-dreams', icon: 'Dictionary' },
+            ],
+          },
+        ]}
+      />
+    </div>
   );
 };
 

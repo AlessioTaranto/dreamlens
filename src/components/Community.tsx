@@ -5,8 +5,8 @@ import './Community.css';
 
 const Community: React.FC = () => {
   const dreams = [
-    { key: '1', title: 'Dream 1', dream: 'Dream content...', analysis: 'Analysis of the dream...', imageUrl: 'https://via.placeholder.com/150', comments: ['Great dream!', 'Interesting!'], upvotes: 10 },
-    { key: '2', title: 'Dream 2', dream: 'Dream content...', analysis: 'Analysis of the dream...', imageUrl: 'https://via.placeholder.com/150', comments: [], upvotes: 5 },
+    { key: '1', title: 'Dream 1', dream: 'Dream content...', imageUrl: 'https://via.placeholder.com/150', upvotes: 10 },
+    { key: '2', title: 'Dream 2', dream: 'Dream content...', imageUrl: 'https://via.placeholder.com/150', upvotes: 5 },
     // Add more dreams
   ];
 

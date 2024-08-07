@@ -1,3 +1,9 @@
 .my-dreams-container {
   padding: 20px;
 }
+
+@media (max-width: 768px) {
+  .my-dreams-container {
+    padding: 10px;
+  }
+}

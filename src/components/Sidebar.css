@@ -1,0 +1,36 @@
+.sidebar {
+    width: 200px;
+    transition: width 0.3s ease;
+    position: relative;
+  }
+  
+  .sidebar.collapsed {
+    width: 50px;
+  }
+  
+  .collapse-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      border-right: none;
+      border-bottom: 1px solid #ddd;
+    }
+  
+    .sidebar.collapsed {
+      height: auto;
+      width: 100%;
+    }
+  
+    .collapse-button {
+      top: 10px;
+      left: 10px;
+    }
+  }
+  

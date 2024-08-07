@@ -7,7 +7,7 @@ import './DreamCarousel.css';
 
 interface DreamCarouselProps {
   title: string;
-  dreams: { key: string; title: string; dream: string; analysis: string; imageUrl: string; comments: string[]; upvotes: number; }[];
+  dreams: { key: string; title: string; dream: string; imageUrl: string; upvotes: number; }[];
 }
 
 const DreamCarousel: React.FC<DreamCarouselProps> = ({ title, dreams }) => {
@@ -26,7 +26,7 @@ const DreamCarousel: React.FC<DreamCarouselProps> = ({ title, dreams }) => {
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 1.4,
+      items: 1,
     },
   };
 

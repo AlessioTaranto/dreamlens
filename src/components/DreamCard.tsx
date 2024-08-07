@@ -22,6 +22,8 @@ const DreamCard: React.FC<DreamCardProps> = ({ dream }) => {
         <Stack horizontal verticalAlign="center" tokens={{ childrenGap: 5 }}>
           <FontIcon iconName="Like" />
           <Text>{dream.upvotes}</Text>
+          <FontIcon iconName='Comment' />
+          <Text>0</Text>
         </Stack>
       </Stack>
     </Stack>
